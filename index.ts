@@ -5,24 +5,24 @@ type Account = {
 
 const accounts: Account[] = [];
 
-function open(number, balance) {
+function open(number: string, balance: number): void {
   accounts.push({ number, balance })
 }
 
-function getBalance(number) {
+function getBalance(number: string): number {
   const account = accounts.find(account => account.number === number)
   if (!account) throw new Error("La cuenta no se encontró")
   return account.balance
 }
 
-function deposit(number, amount) {
+function deposit(number: string, amount: number): void {
   const account = accounts.find(account => account.number )
   if (!account) throw new Error("La cuenta no se encontró")
 
   account.balance += amount
 }
 
-function withdraw(number, amount) {
+function withdraw(number: string, amount: number): void {
   const account = accounts.find(account => account.number )
   if (!account) throw new Error("La cuenta no se encontró")
 
